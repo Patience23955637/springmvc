@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * 
- * @title:创建
+ * @title:Item的pojo类
  * @description:
  * @author:hzhiping
  * @since:2018年4月25日 下午8:17:22

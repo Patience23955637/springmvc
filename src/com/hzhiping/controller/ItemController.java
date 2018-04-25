@@ -5,15 +5,16 @@ import java.util.Date;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hzhiping.model.Item;
 // 在类的上方添加@Controller注解，代表是使用spring进行注入
 @Controller
-public class ItemController {
+public class ItemController{
 	// @RequestMapping：里面放的是请求的url，和用户请求的url进行匹配
 	// 后缀.action可以加也可以不加
-	@RequestMapping("/itemlist.action")
+	@RequestMapping(value="/itemlist.action",method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView queryItemList(){// ModelAndView模型
 		// 虚拟数据传值给ModelAndView
 		ArrayList<Item>itemList=new ArrayList<Item>();
@@ -28,7 +29,7 @@ public class ItemController {
 		// 添加数据到模型中
 		modelAndView.addObject("itemList", itemList);
 		// 设置视图jsp，需要设置jsp的物理地址
-		modelAndView.setViewName("/WEB-INF/jsp/itemList.jsp");
+		modelAndView.setViewName("itemList");
 		return modelAndView;
 	}
 }

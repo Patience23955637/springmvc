@@ -10,4 +10,22 @@
 	<!-- 配置controller扫描包 -->
 	<context:component-scan base-package="com.hzhiping.controller" />
 
+	<!-- 进行注解方式的处理器映射器 
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>
+	
+	 两种适配器相关的配置 
+	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean>
+	<bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"></bean>
+	-->
+	
+	<!-- 注解驱动的配置 -->
+	<mvc:annotation-driven />
+	
+	<!-- 视图解析器的配置 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- 配置前缀 -->
+		<property name="prefix" value="/WEB-INF/jsp/"></property>
+		<!-- 配置后缀 -->
+		<property name="suffix" value=".jsp"></property>
+	</bean>
 </beans>
